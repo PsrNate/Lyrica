@@ -65,6 +65,6 @@ that's how I came up with one of Touhou's rare nurses, Eirin.
 ***
 
 Of course there will be more to come, but as only Eirin's code has already been
-written in flat PHP, migrating it to Symfony2 will be the first objective,
+written in flat PHP, migrating it to Symfony2 will be the first objective
 before we move on to the main social features and player rankings.
 Stay tuned !
