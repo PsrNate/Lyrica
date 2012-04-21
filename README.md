@@ -33,7 +33,7 @@ is how I will be referring to the project. Deal with it.
 ----------
 
 As you may have noticed, Lyrica is powered by [Symfony](http://symfony.com),
-which means that :
+which means that its source code will be divided in bundles :
 
 > A bundle is similar to a plugin in other software, but even better. The key
 difference is that everything is a bundle in Symfony2, including both the core
