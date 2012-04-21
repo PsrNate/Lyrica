@@ -5,12 +5,12 @@ A Touhou-specialized social network ! This project mainly aims at
 centralizing replays and scores so as to create rankings. It should
 therefore contain some advanced social functions such as messaging, comparing
 or sending matches replays - considering, for instance, Phantasmagoria games.
-There should therefore be player rankings based on ELO indicators as well.
+There will be player rankings based on ELO indicators as well.
 
 As of today the project started a few months ago and I'm still in the first
 steps of figuring out how the website's general outline should be. Lyrica
 is probably going to be written in French - even though it will be developed
-and commented in English; but translating it to English, Japanese or other
+and commented in English; but translating it to English, Japanese and other
 languages is obviously planned on a longer time scale.
 
 1. Why Lyrica ?
@@ -53,11 +53,11 @@ source code.
 This bundle will act like a main gate for the website ; and yes, when you
 think of a main gate, you come up with the idea of a shrine, and thus its
 maiden. And no, I didn't choose Reimu because she's one of mai waifus. Well,
-not entirely. Erm. Whatever.
+not entirely... Whatever.
 
 ### 2. Eirin
 
-This bundle should consist in what PRS consisted, namely hosting a popularity
+This bundle should consist in what PRS did, namely hosting a popularity
 contest between characters, based on 1-vs-1 matchups and ELO indicators.
 I thought of the idea as Characters Power Ranking, that is to say CPR...And
 that's how I came up with one of Touhou's rare nurses, Eirin.
