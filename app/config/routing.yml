@@ -1,3 +1,7 @@
+LyricaEirinBundle:
+    resource: "@LyricaEirinBundle/Resources/config/routing.yml"
+    prefix:   /
+
 LyricaReimuBundle:
     resource: "@LyricaReimuBundle/Resources/config/routing.yml"
     prefix:   /

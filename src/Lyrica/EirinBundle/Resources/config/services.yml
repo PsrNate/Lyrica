@@ -1,0 +1,7 @@
+parameters:
+#    lyrica_eirin.example.class: Lyrica\EirinBundle\Example
+
+services:
+#    lyrica_eirin.example:
+#        class: %lyrica_eirin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
