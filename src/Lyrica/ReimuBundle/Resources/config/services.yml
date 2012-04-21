@@ -1,0 +1,7 @@
+parameters:
+#    lyrica_reimu.example.class: Lyrica\ReimuBundle\Example
+
+services:
+#    lyrica_reimu.example:
+#        class: %lyrica_reimu.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
