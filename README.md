@@ -19,7 +19,7 @@ known for its huge cast of characters, well-developed storylines, and related
 materials such as music CDs, fan-made comics and animated videos made to the
 music.
 
-Pretty nice and comprehensive definition from
+Nicely written and comprehensive definition, taken from
 [Touhou Project Wiki](http://touhou.wikia.com/wiki/Touhou_Wiki). 
 As of today the project started a few months ago and I'm still in the first
 steps of figuring out how the website's general outline should be. Lyrica
@@ -37,7 +37,7 @@ vote for your favorite characters, inspired from
 And exactly as you may think, the main idea was to write something less
 disastrous than Seimoe. :V
 
-Where was I ? Oh right, PRS...Which made me think of a specific name :
+Where was I ? Oh right, PRS...Which made me think of a quite familiar name :
 Prismriver. Then I had a choice between the three sisters and that's pretty
 much how everything came down to "Lyrica". It probably isn't more than a
 codename, since the domain name isn't available, but for the time being this
