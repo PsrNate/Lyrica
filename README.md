@@ -66,7 +66,7 @@ source code.
 
 This bundle is meant to store a news feed, fully embedded with comments, tags,
 research functions and much more things one would normally expect from a blog.
-As such, I had a choice between Aya and Hatate as reporter, and I went for Aya.
+As such, I had a choice between Aya and Hatate as reporters, and I went for Aya.
 Don't ask me why. :)
 
 ### Eirin
