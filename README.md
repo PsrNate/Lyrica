@@ -5,8 +5,22 @@ A Touhou-specialized social network ! This project mainly aims at
 centralizing replays and scores so as to create rankings. It should
 therefore contain some advanced social functions such as messaging, comparing
 or sending matches replays - considering, for instance, Phantasmagoria games.
-There will be player rankings based on ELO indicators as well.
+There will be player rankings based on Elo indicators as well.
 
+But what's Touhou anyway ?
+
+> The Touhou Project (東方Project) is a series of 2D (with 3D background)
+vertically-scrolling danmaku shooting games made by Team Shanghai Alice, with
+three fighting game spinoffs co-produced with Tasogare Frontier. They are
+similar to regular shooting games, but focus more on weaving through complex
+patterns containing anywhere from dozens to hundreds of bullets. Every game in
+the Touhou series is set in the fantasy land of Gensokyo, and the series is
+known for its huge cast of characters, well-developed storylines, and related
+materials such as music CDs, fan-made comics and animated videos made to the
+music.
+
+Pretty nice and comprehensive definition from
+[Touhou Project Wiki](http://touhou.wikia.com/wiki/Touhou_Wiki). 
 As of today the project started a few months ago and I'm still in the first
 steps of figuring out how the website's general outline should be. Lyrica
 is probably going to be written in French - even though it will be developed
@@ -48,19 +62,26 @@ Pretty concise and straightforward definition from
 main document. Let's move on to the bundles that should be part of Lyrica's
 source code.
 
-### 1. Reimu
+### Aya
 
-This bundle will act like a main gate for the website ; and yes, when you
-think of a main gate, you come up with the idea of a shrine, and thus its
-maiden. And no, I didn't choose Reimu because she's one of mai waifus. Well,
-not entirely... Whatever.
+This bundle is meant to store a news feed, fully embedded with comments, tags,
+research functions and much more things one would normally expect from a blog.
+As such, I had a choice between Aya and Hatate as reporter, and I went for Aya.
+Don't ask me why. :)
 
-### 2. Eirin
+### Eirin
 
 This bundle should consist in what PRS did, namely hosting a popularity
 contest between characters, based on 1-vs-1 matchups and ELO indicators.
 I thought of the idea as Characters Power Ranking, that is to say CPR...And
-that's how I came up with one of Touhou's rare nurses, Eirin.
+that's how I came up with Touhou's nurse, Eirin.
+
+### Reimu
+
+This bundle will act like a main gate for the website ; and yes, when you
+think of a main gate, you come up with the idea of a shrine, and thus its
+maiden. And no, I didn't choose Reimu because she's one of mai waifus. Well,
+not entirely... Meh. Whatever.
 
 ***
 
