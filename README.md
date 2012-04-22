@@ -30,7 +30,7 @@ languages is obviously planned on a longer time scale.
 1. Why Lyrica ?
 ---------------
 
-The answer is pretty simple actually. :) It all actually started under
+The answer is pretty simple. :) It all actually started under
 the name Touhou PRS (Power Ranking System) as a website where you could
 vote for your favorite characters, inspired from
 [Facemash](http://en.wikipedia.org/wiki/History_of_Facebook#Facemash).
