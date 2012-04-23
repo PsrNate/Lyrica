@@ -1,0 +1,24 @@
+{# LyricaEirinBundle:Persona:rankings.html.twig #}
+
+{% block body %}
+<table>
+    {% set current_elo = 0 %}
+    {% set rank = 1 %}
+    <tr>
+        <th>Rang</th>
+        <th>Nom</th>
+        <th>Indice Elo</th>
+    </tr>
+    {% for p in personae %}
+    <tr>
+        {% if current_elo == p.elo %}
+            <td>-</td>
+        {% else %}
+            <td>{{ rank }}</td>
+            {% rank = rank + 1 %}
+        {% endif %}
+        <td>{{ p.name }}</td>
+        <td>{{ p.elo }}</td>
+    </tr>
+    {% endfor %}
+</table>
