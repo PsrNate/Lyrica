@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Lyrica\EirinBundle\Entity\PersonaRepository;
 use Lyrica\EirinBundle\Entity\Appearance;
+use Lyrica\EirinBundle\Utility\Elo;
 
 /**
  * Lyrica\EirinBundle\Entity\Persona
@@ -72,6 +73,15 @@ class Persona
      *
      */
     private $appearances;
+    
+    public function __construct()
+    {
+        $this->appearances = new ArrayCollection();
+        $this->elo = Elo::ROOKIE;
+        $this->wins = 0;
+        $this->draws = 0;
+        $this->losses = 0;
+    }
 
     /**
      * Get id
@@ -202,10 +212,6 @@ class Persona
     {
         return $this->veteran;
     }
-    public function __construct()
-    {
-        $this->appearances = new ArrayCollection();
-    }
     
     /**
      * Add appearances
@@ -225,5 +231,13 @@ class Persona
     public function getAppearances()
     {
         return $this->appearances;
+    }
+    
+    /**
+     * Get the number of matches
+     */
+    public function countMatches()
+    {
+        return $this->wins + $this->losses + $this->draws;
     }
 }

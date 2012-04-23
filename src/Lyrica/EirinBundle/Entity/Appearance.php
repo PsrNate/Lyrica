@@ -8,6 +8,7 @@ use Lyrica\EirinBundle\Entity\AppearanceRepository;
 use Lyrica\EirinBundle\Entity\Persona;
 use Lyrica\EirinBundle\Entity\Game;
 use Lyrica\EirinBundle\Entity\Role;
+use Lyrica\EirinBundle\Utility\Elo;
 
 /**
  * Lyrica\EirinBundle\Entity\Appearance
@@ -83,6 +84,10 @@ class Appearance
     public function __construct()
     {
         $this->role = new ArrayCollection();
+        $this->elo = Elo::ROOKIE;
+        $this->wins = 0;
+        $this->draws = 0;
+        $this->losses = 0;
     }
 
     /**
@@ -263,5 +268,13 @@ class Appearance
     public function addRole(Role $role)
     {
         $this->role[] = $role;
+    }
+    
+    /**
+     * Get the number of matches
+     */
+    public function countMatches()
+    {
+        return $this->wins + $this->losses + $this->draws;
     }
 }
