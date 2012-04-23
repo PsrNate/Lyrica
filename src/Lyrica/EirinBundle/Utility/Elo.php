@@ -19,7 +19,7 @@ class Elo
      *
      * @return int the new elo score
      */
-    public function calculate($elo, $opp, $res, $mat, $vet)
+    public static function calculate($elo, $opp, $res, $mat, $vet)
     {
         // p(D) : victory probability
         $diff = $opp - $elo; // inverted for calc purposes
