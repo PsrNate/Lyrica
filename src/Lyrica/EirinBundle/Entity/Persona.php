@@ -3,6 +3,8 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Lyrica\EirinBundle\Entity\Appearance;
 
 /**
  * Lyrica\EirinBundle\Entity\Persona
@@ -62,7 +64,13 @@ class Persona
      * @ORM\Column(name="veteran", type="smallint")
      */
     private $veteran;
-
+    
+    /**
+     * @var Doctrine\Common\Collections\Collection $appearances
+     * @ORM\OneToMany(targetEntity="Appearance", mappedBy="Appearance")
+     *
+     */
+    private $appearances;
 
     /**
      * Get id
@@ -192,5 +200,29 @@ class Persona
     public function getVeteran()
     {
         return $this->veteran;
+    }
+    public function __construct()
+    {
+        $this->appearances = new ArrayCollection();
+    }
+    
+    /**
+     * Add appearances
+     *
+     * @param Lyrica\EirinBundle\Entity\Appearance $appearances
+     */
+    public function addAppearance(Appearance $appearance)
+    {
+        $this->appearances[] = $appearance;
+    }
+
+    /**
+     * Get appearances
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getAppearances()
+    {
+        return $this->appearances;
     }
 }

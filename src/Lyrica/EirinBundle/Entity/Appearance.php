@@ -3,10 +3,9 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Lyrica\EirinBundle\Entity\Game;
 use Lyrica\EirinBundle\Entity\Persona;
+use Lyrica\EirinBundle\Entity\Game;
 use Lyrica\EirinBundle\Entity\Role;
-
 /**
  * Lyrica\EirinBundle\Entity\Appearance
  *
@@ -17,19 +16,19 @@ class Appearance
 {
     /**
      * @var Persona $persona
-     * @ORM\ManyToOne(targetEntity="Lyrica\EirinBundle\Entity\Persona")
+     * @ORM\ManyToOne(targetEntity="Persona, inversedBy="Persona")
      */
     private $persona;
     
     /**
      * @var Game $game
-     * @ORM\ManyToOne(targetEntity="Lyrica\EirinBundle\Entity\Game")
+     * @ORM\ManyToOne(targetEntity="Game")
      */
     private $game;
     
     /**
      * @var Role $role
-     * @ORM\ManyToMany(targetEntity="Lyrica\EirinBundle\Entity\Role")
+     * @ORM\ManyToMany(targetEntity="Role")
      */
     private $role;
     
@@ -246,5 +245,19 @@ class Appearance
     public function getRole()
     {
         return $this->role;
+    }
+    public function __construct()
+    {
+        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add role
+     *
+     * @param Lyrica\EirinBundle\Entity\Role $role
+     */
+    public function addRole(\Lyrica\EirinBundle\Entity\Role $role)
+    {
+        $this->role[] = $role;
     }
 }
