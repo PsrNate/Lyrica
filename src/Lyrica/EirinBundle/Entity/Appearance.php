@@ -29,7 +29,7 @@ class Appearance
     
     /**
      * @var Role $role
-     * @ORM\ManyToOne(targetEntity="Lyrica\EirinBundle\Entity\Role")
+     * @ORM\ManyToMany(targetEntity="Lyrica\EirinBundle\Entity\Role")
      */
     private $role;
     
