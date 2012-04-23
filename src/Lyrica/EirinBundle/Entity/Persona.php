@@ -4,13 +4,14 @@ namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Lyrica\EirinBundle\Entity\PersonaRepository;
 use Lyrica\EirinBundle\Entity\Appearance;
 
 /**
  * Lyrica\EirinBundle\Entity\Persona
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Lyrica\EirinBundle\Entity\PersonaRepository")
+ * @ORM\Entity(repositoryClass="PersonaRepository")
  */
 class Persona
 {

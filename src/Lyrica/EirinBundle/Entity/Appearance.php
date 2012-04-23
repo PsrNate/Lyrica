@@ -3,14 +3,17 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Lyrica\EirinBundle\Entity\AppearanceRepository;
 use Lyrica\EirinBundle\Entity\Persona;
 use Lyrica\EirinBundle\Entity\Game;
 use Lyrica\EirinBundle\Entity\Role;
+
 /**
  * Lyrica\EirinBundle\Entity\Appearance
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Lyrica\EirinBundle\Entity\AppearanceRepository")
+ * @ORM\Entity(repositoryClass="AppearanceRepository")
  */
 class Appearance
 {
@@ -75,7 +78,12 @@ class Appearance
      * @ORM\Column(name="veteran", type="smallint")
      */
     private $veteran;
-
+    
+    
+    public function __construct()
+    {
+        $this->role = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -192,7 +200,7 @@ class Appearance
      *
      * @param Lyrica\EirinBundle\Entity\Persona $persona
      */
-    public function setPersona(\Lyrica\EirinBundle\Entity\Persona $persona)
+    public function setPersona(Persona $persona)
     {
         $this->persona = $persona;
     }
@@ -212,7 +220,7 @@ class Appearance
      *
      * @param Lyrica\EirinBundle\Entity\Game $game
      */
-    public function setGame(\Lyrica\EirinBundle\Entity\Game $game)
+    public function setGame(Game $game)
     {
         $this->game = $game;
     }
@@ -232,7 +240,7 @@ class Appearance
      *
      * @param Lyrica\EirinBundle\Entity\Role $role
      */
-    public function setRole(\Lyrica\EirinBundle\Entity\Role $role)
+    public function setRole(Role $role)
     {
         $this->role = $role;
     }
@@ -246,17 +254,13 @@ class Appearance
     {
         return $this->role;
     }
-    public function __construct()
-    {
-        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
+
     /**
      * Add role
      *
      * @param Lyrica\EirinBundle\Entity\Role $role
      */
-    public function addRole(\Lyrica\EirinBundle\Entity\Role $role)
+    public function addRole(Role $role)
     {
         $this->role[] = $role;
     }
