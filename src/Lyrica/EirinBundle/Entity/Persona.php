@@ -3,6 +3,7 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 use Lyrica\EirinBundle\Entity\PersonaRepository;
 use Lyrica\EirinBundle\Entity\Appearance;
@@ -31,6 +32,13 @@ class Persona
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+    
+    /**
+     * @var string $slug
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @var smallint $elo
@@ -239,5 +247,15 @@ class Persona
     public function countMatches()
     {
         return $this->wins + $this->losses + $this->draws;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

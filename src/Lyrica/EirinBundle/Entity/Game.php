@@ -36,7 +36,9 @@ class Game
     private $name;
     
     /**
-     * @Gedmo\Slug(fields={"opus", "name"})
+     * @var string $slug
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(name="slug", type="string", length=255)
      */
     private $slug;
 
@@ -69,5 +71,35 @@ class Game
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set opus
+     *
+     * @param decimal $opus
+     */
+    public function setOpus($opus)
+    {
+        $this->opus = $opus;
+    }
+
+    /**
+     * Get opus
+     *
+     * @return decimal 
+     */
+    public function getOpus()
+    {
+        return $this->opus;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

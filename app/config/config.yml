@@ -47,8 +47,6 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
-        default:
-            sluggable: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -60,3 +58,9 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+# Doctrine extensions configurations
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
