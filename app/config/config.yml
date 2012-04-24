@@ -59,8 +59,12 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
-# Doctrine extensions configurations
+# Doctrine extensions Configuration
 stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+
+# FOSUserBundle Configuration
+fos_user:
+    db_driver: orm

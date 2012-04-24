@@ -18,9 +18,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new Lyrica\ReimuBundle\LyricaReimuBundle(),
             new Lyrica\EirinBundle\LyricaEirinBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
+            new Lyrica\SatoriBundle\LyricaSatoriBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
