@@ -98,4 +98,44 @@ class Encounter
     {
         return $this->draw;
     }
+
+    /**
+     * Set winner
+     *
+     * @param Lyrica\EirinBundle\Entity\Persona $winner
+     */
+    public function setWinner(Persona $winner)
+    {
+        $this->winner = $winner;
+    }
+
+    /**
+     * Get winner
+     *
+     * @return Lyrica\EirinBundle\Entity\Persona 
+     */
+    public function getWinner()
+    {
+        return $this->winner;
+    }
+
+    /**
+     * Set loser
+     *
+     * @param Lyrica\EirinBundle\Entity\Persona $loser
+     */
+    public function setLoser(Persona $loser)
+    {
+        $this->loser = $loser;
+    }
+
+    /**
+     * Get loser
+     *
+     * @return Lyrica\EirinBundle\Entity\Persona 
+     */
+    public function getLoser()
+    {
+        return $this->loser;
+    }
 }

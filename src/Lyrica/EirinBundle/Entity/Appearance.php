@@ -20,7 +20,7 @@ class Appearance
 {
     /**
      * @var Persona $persona
-     * @ORM\ManyToOne(targetEntity="Persona, inversedBy="Persona")
+     * @ORM\ManyToOne(targetEntity="Persona", inversedBy="Persona")
      */
     private $persona;
     
