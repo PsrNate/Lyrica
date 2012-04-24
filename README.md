@@ -83,6 +83,16 @@ think of a main gate, you come up with the idea of a shrine, and thus its
 maiden. And no, I didn't choose Reimu because she's one of mai waifus. Well,
 not entirely... Meh. Whatever.
 
+### Satori
+
+This is actually a User bundle, which will manage permissions, settings, and
+everything related. I'll use 
+[FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) as a base
+to work with. And the reason why I went for Satori is simply because she's a
+landlady, that is to say someone that manages the place and
+[keeps everything in place](http://www.youtube.com/watch?v=J26HxhLNNu4).
+Not to mention that she's indecently cute. :V
+
 ***
 
 Of course there will be more to come, but as only Eirin's code has already been
