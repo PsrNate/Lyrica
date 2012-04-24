@@ -3,6 +3,7 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lyrica\EirinBundle\Entity\Persona;
 
 /**
  * Lyrica\EirinBundle\Entity\Encounter
@@ -20,7 +21,19 @@ class Encounter
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var Lyrica\EirinBundle\Entity\Persona $winner
+     * @ORM\ManyToOne(targetEntity="Persona")
+     */
+    private $winner;
 
+    /**
+     * @var Lyrica\EirinBundle\Entity\Persona $loser
+     * @ORM\ManyToOne(targetEntity="Persona")
+     */
+    private $loser;
+    
     /**
      * @var datetime $date
      *
