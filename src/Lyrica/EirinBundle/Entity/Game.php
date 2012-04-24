@@ -3,6 +3,7 @@
 namespace Lyrica\EirinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Lyrica\EirinBundle\Entity\Game
@@ -22,11 +23,22 @@ class Game
     private $id;
 
     /**
+     * @var decimal $opus
+     * @ORM\Column(type="decimal")
+     */
+    private $opus;
+    
+    /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+    
+    /**
+     * @Gedmo\Slug(fields={"opus", "name"})
+     */
+    private $slug;
 
 
     /**
