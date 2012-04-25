@@ -1,6 +1,6 @@
 LyricaEirinBundle:
     resource: "@LyricaEirinBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /characters
 
 LyricaReimuBundle:
     resource: "@LyricaReimuBundle/Resources/config/routing.yml"
@@ -11,6 +11,8 @@ LyricaReimuBundle:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+
+# FOSUserBundle
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
