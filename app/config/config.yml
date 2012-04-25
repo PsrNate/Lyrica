@@ -68,4 +68,5 @@ stof_doctrine_extensions:
 # FOSUserBundle Configuration
 fos_user:
     db_driver: orm
+    firewall_name: main
     user_class: Lyrica\SatoriBundle\Entity\User

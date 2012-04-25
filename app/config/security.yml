@@ -16,7 +16,8 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+        
+        # AcmeDemoBundle Configuration
         login:
             pattern:  ^/demo/secured/login$
             security: false
@@ -32,6 +33,21 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
+        
+        # Lyrica's configuration (FOSUserBundle)
+        login:
+            pattern: ^/(login$|register|resetting)
+            anonymous: true
+        
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                remember_me: true
+            remember_me:
+                key: %secret%
+            anonymous: true
+            logout: true
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
