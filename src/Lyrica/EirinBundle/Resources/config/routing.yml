@@ -1,3 +1,7 @@
 Eirin_rankings:
     pattern: /rankings.html
     defaults: { _controller: LyricaEirinBundle:Persona:rankings }
+    
+Eirin_options:
+    pattern: /voting-options.html
+    defaults: { _controller: LyricaEirinBundle:Vote:options }
