@@ -51,4 +51,14 @@ class VoteController extends Controller
         $tpl_path = 'LyricaEirinBundle:Vote:options.html.twig';
         return $this->render($tpl_path, $argts);
     }
+    
+    /**
+     * Saves the options
+     */
+    public function saveOptionsAction()
+    {
+        // Fetching request and session
+        $req = $this->get('request')->request;
+        $ses = $this->get('session');
+    }
 }
