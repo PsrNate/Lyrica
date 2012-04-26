@@ -9,6 +9,8 @@ Eirin_options:
 Eirin_saveOptions:
     pattern: /save-options
     defaults: { _controller: LyricaEirinBundle:Vote:saveOptions }
+    requirements:
+        _method: POST
 
 Eirin_vote:
     pattern: /vote.html
