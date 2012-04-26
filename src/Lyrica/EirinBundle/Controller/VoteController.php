@@ -63,7 +63,7 @@ class VoteController extends Controller
         
         // Fetching all games
         $em = $this->getDoctrine()->getEntityManager();
-        $gr = $em->getRepository('LyricaEirinBundle:Games');
+        $gr = $em->getRepository('LyricaEirinBundle:Game');
         $games = $gr->findAll();
         
         // Then adding every game
