@@ -60,5 +60,28 @@ class VoteController extends Controller
         // Fetching request and session
         $req = $this->get('request')->request;
         $ses = $this->get('session');
+        
+        // Fetching all games
+        $em = $this->getDoctrine()->getEntityManager();
+        $gr = $em->getRepository('LyricaEirinBundle:Games');
+        $games = $gr->findAll();
+        
+        // Then adding every game
+        foreach ($games as $game)
+        {
+            $formValue = $req->get($game->getOpus());
+            
+            if ($formValue === 'true')
+            {
+                $ex_games[] = $game->getOpus();
+            }
+        }
+        
+        // Finally saving settings and forwarding to the
+        // flash forwarding page
+        $ses->set('ex_games', $ex_games);
+        $act_name = 'LyricaReimuBundle:Flash:display';
+        $argts['forward'] = 'Eirin_options';
+        return $this->forward($act_name, $argts);
     }
 }
