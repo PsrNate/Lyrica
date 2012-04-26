@@ -82,6 +82,7 @@ class VoteController extends Controller
         $ses->set('ex_games', $ex_games);
         $act_name = 'LyricaReimuBundle:Flash:display';
         $argts['forward'] = 'Eirin_options';
+        $argts['message'] = 'Vos options de vote ont été sauvegardées !';
         return $this->forward($act_name, $argts);
     }
 }
