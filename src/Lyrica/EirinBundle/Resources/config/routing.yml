@@ -5,3 +5,7 @@ Eirin_rankings:
 Eirin_options:
     pattern: /voting-options.html
     defaults: { _controller: LyricaEirinBundle:Vote:options }
+
+Eirin_vote:
+    pattern: /vote.html
+    defaults: { _controller: LyricaEirinBundle:Vote:index }
