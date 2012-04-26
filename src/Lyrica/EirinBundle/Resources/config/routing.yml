@@ -6,6 +6,10 @@ Eirin_options:
     pattern: /voting-options.html
     defaults: { _controller: LyricaEirinBundle:Vote:options }
 
+Eirin_saveOptions:
+    pattern: /save-options
+    defaults: { _controller: LyricaEirinBundle:Vote:saveOptions }
+
 Eirin_vote:
     pattern: /vote.html
     defaults: { _controller: LyricaEirinBundle:Vote:index }
