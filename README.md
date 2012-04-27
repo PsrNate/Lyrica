@@ -76,6 +76,13 @@ contest between characters, based on 1-vs-1 matchups and ELO indicators.
 I thought of the idea as Characters Power Ranking, that is to say CPR...And
 that's how I came up with Touhou's nurse, Eirin.
 
+### Nitori
+
+Exactly as its name suggests, this bundle is the entire application's
+mechanic, so to speak ; it holds most of the services and extensions meant
+to be used in any of Lyrica's bundles : namely Twig Extensions, as one of
+many examples.
+
 ### Reimu
 
 This bundle will act like a main gate for the website ; and yes, when you
