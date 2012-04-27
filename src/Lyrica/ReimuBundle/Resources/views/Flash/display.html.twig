@@ -1,0 +1,12 @@
+{# LyricaReimuBundle:Flash:display.html.twig #}
+{% extends "LyricaReimuBundle::layout.html.twig" %}
+
+{% block headers %}
+    {# Redirection #}
+    <meta http-equiv="refresh"
+          content="10;url={{ url(forward) }}" />
+{% endblock %}
+
+{% block body %}
+    <p>{{ message }}</p>
+{% endblock %}

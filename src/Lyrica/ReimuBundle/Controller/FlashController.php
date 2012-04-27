@@ -14,5 +14,10 @@ class FlashController extends Controller
      */
     public function displayAction($message, $forward)
     {
+        $argts['message'] = $message;
+        $argts['forward'] = $forward;
+        
+        $tpl_path = 'LyricaReimuBundle:Flash:display.html.twig';
+        return $this->render($tpl_path, $argts);
     }
 }
