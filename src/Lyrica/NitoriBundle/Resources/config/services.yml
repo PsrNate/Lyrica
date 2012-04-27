@@ -1,0 +1,5 @@
+services:
+    lyrica.twig.lyrica_extension:
+        class: Lyrica\NitoriBundle\Twig\LyricaExtension
+        tags:
+            - { name: twig.extension }
