@@ -12,7 +12,22 @@ class VoteController extends Controller
      */
     public function indexAction()
     {
+        // Fetch exclusions
+        $ex_games = $this->get('session')->get('ex_games') or array();
         
+        // Then Personae
+        $em = $this->getDoctrine()->getEntityManger();
+        $pr = $em->getRepository('LyricaEirinBundle:Persona');
+        
+        $results = $pr->findOpponents($ex_games);
+        $argts['c1'] = $results[0];
+        $argts['c2'] = $results[1];
+        
+        // TODO : Externalize appearances for Twig displaying
+        
+        // Render
+        $tpl_path = 'LyricaEirinBundle:Vote:index.html.twig';
+        return $this->render($tpl_path, $argts);
     }
     
     /**
@@ -75,6 +90,12 @@ class VoteController extends Controller
             {
                 $ex_games[] = $game->getOpus();
             }
+        }
+        
+        // Security
+        if (empty($ex_games))
+        {
+            $ex_games = array();
         }
         
         // Finally saving settings and forwarding to the
