@@ -55,7 +55,7 @@ class LyricaExtension extends Twig_Extension
             // Common to every case
             $res .= '<li>'.$cur->getRole()->getFullName().'</li>';
         }
-        // Final rendering (clonsing both lists)
+        // Final rendering (closing both lists)
         return $res.'</ul></ul>';
     }
 }
