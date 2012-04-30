@@ -22,18 +22,18 @@ class Role
     private $id;
 
     /**
-     * @var string $stage
+     * @var integer $order
      *
-     * @ORM\Column(name="stage", type="string", length=255)
+     * @ORM\Column(name="order", type="smallint")
      */
-    private $stage;
+    private $order;
 
     /**
-     * @var string $rolename
+     * @var string $title
      *
-     * @ORM\Column(name="rolename", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $rolename;
+    private $title;
 
 
     /**
@@ -47,42 +47,33 @@ class Role
     }
     
     /**
-     * Get full name
-     * @return string
+     * Set order
+     *
+     * @param integer $order
      */
-    public function getFullName()
+    public function setOrder($order)
     {
-        return $this->stage.' - '.$this->rolename;
+        $this->order = $order;
     }
 
     /**
-     * Set stage
+     * Get order
      *
-     * @param string $stage
+     * @return integer 
      */
-    public function setStage($stage)
+    public function getOrder()
     {
-        $this->stage = $stage;
+        return $this->order;
     }
 
     /**
-     * Get stage
+     * Set title
      *
-     * @return string 
+     * @param string $title
      */
-    public function getStage()
+    public function setTitle($title)
     {
-        return $this->stage;
-    }
-
-    /**
-     * Set rolename
-     *
-     * @param string $rolename
-     */
-    public function setRolename($rolename)
-    {
-        $this->rolename = $rolename;
+        $this->title = $title;
     }
 
     /**
@@ -90,8 +81,8 @@ class Role
      *
      * @return string 
      */
-    public function getRolename()
+    public function getTitle()
     {
-        return $this->rolename;
+        return $this->title;
     }
 }

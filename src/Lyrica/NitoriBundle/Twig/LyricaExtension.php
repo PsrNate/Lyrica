@@ -53,7 +53,7 @@ class LyricaExtension extends Twig_Extension
                 $res .= '<ul class="second_level">';
             }
             // Common to every case
-            $res .= '<li>'.$cur->getRole()->getFullName().'</li>';
+            $res .= '<li>'.$cur->getRole()->getTitle().'</li>';
         }
         // Final rendering (closing both lists)
         return $res.'</ul></ul>';
