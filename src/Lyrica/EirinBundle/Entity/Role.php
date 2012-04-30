@@ -45,6 +45,15 @@ class Role
     {
         return $this->id;
     }
+    
+    /**
+     * Get full name
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->stage.' - '.$this->rolename;
+    }
 
     /**
      * Set stage

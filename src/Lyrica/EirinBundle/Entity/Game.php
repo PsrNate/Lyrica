@@ -52,6 +52,15 @@ class Game
     {
         return $this->id;
     }
+    
+    /**
+     * Get full name
+     * @return string
+     */
+    public function getFullName()
+    {
+        return 'Touhou '.$this->opus.' : '.$this->name;
+    }
 
     /**
      * Set name

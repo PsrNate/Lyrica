@@ -38,6 +38,7 @@ class VoteController extends Controller
     }
     
     /**
+     *
      * Displays the voting options
      */
     public function optionsAction()
