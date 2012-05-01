@@ -13,6 +13,26 @@ use Doctrine\ORM\EntityRepository;
 class PersonaRepository extends EntityRepository
 {
     /**
+     * Fetches a Persona with all Appearances and Roles,
+     * chronologically ordered (game-wise)
+     *
+     * @param integer $id the Persona's id
+     * @return Persona
+     */
+    public function findComplete($id)
+    {
+        $qb = $this->createQueryBuilder('p');
+        $qb->join('p.appearances', 'a');
+        $qb->join('a.game', 'g');
+        $qb->join('a.roles', 'r');
+        $qb->addOrderBy('g.opus', 'asc');
+        $qb->addOrderBy('r.order', 'asc');
+        
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+    
+    /**
      * Fetches two opponents, up to user options
      *
      * @param array $excluding the game ops excluded by user
