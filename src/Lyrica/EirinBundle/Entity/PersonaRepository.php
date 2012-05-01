@@ -27,9 +27,16 @@ class PersonaRepository extends EntityRepository
         $qb->innerJoin('Game', 'g');
         
         // Exclusions
-        foreach ($excluding as $opus)
+        for ($i = 0, $c = count($excluding) ; $i < $c ; $i++)
         {
-            $qb->where('g.opus != '.$opus);
+            if ($i == 0)
+            {
+                $qb->where('g.opus != '.$excluding[0]);
+            }
+            else
+            {
+                $qb->andWhere('g.opus != '.$excluding[$i]);
+            }
         }
         
         // Applying query
