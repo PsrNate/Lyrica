@@ -19,3 +19,43 @@
 </td>
 </tr>
 </table>
+
+<script>
+// Apparitions
+var l_cell = document.getElementById('left_character');
+var mid_cell = document.getElementById('tie');
+var r_cell = document.getElementById('right_character');
+
+var default_content = mid_cell.innerHTML;
+var la = '<p>{{ c1.name }}</p>{{ c1.appearances|a2h }}';
+var ra = '<p>{{ c2.name }}</p>{{ c2.appearances|a2h }}';
+
+l_cell.onmouseover = function () {
+    mid_cell.innerHTML = la;
+};
+r_cell.onmouseover = function () {
+	mid_cell.innerHTML = ra;
+};
+l_cell.onmouseout = function () {
+	mid_cell.innerHTML = default_content;
+};
+r_cell.onmouseout = function () {
+	mid_cell.innerHTML = default_content;
+};
+
+// Triggers
+var triggers = document.querySelectorAll('form img');
+
+for (var i = 0, c = triggers.length ; i < c ; i++ )
+{
+    triggers[i].onclick = function(e) {
+	e.target.parentNode.submit();
+    };
+}
+
+var tie = document.getElementById('draw_link');
+
+tie.onclick = function() {
+    document.querySelector('#tie form').submit();
+};
+</script>
