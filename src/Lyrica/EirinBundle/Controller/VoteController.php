@@ -23,8 +23,6 @@ class VoteController extends Controller
         $argts['c1'] = $results[0];
         $argts['c2'] = $results[1];
         
-        // TODO : Externalize appearances for Twig displaying
-        
         // Render
         $tpl_path = 'LyricaEirinBundle:Vote:index.html.twig';
         return $this->render($tpl_path, $argts);

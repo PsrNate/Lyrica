@@ -74,8 +74,8 @@ class PersonaRepository extends EntityRepository
         while ($results[1] == $results[0]);
         
         // Finally, return the personae
-        $results[0] = $this->find($results[0]);
-        $results[1] = $this->find($results[1]);
+        $results[0] = $this->findComplete($results[0]);
+        $results[1] = $this->findComplete($results[1]);
         
         return $results;
     }
