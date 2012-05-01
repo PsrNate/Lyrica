@@ -1,0 +1,18 @@
+{# LyricaEirinBundle:Vote:matchForm.html.twig #}
+
+{% set img_path = "images/characters/" %}
+
+<form method="post" action="{{ path('Eirin_match') }}">
+    <input type="hidden" name="w_id" value="{{ w.id }}" />
+    <input type="hidden" name="l_id" value="{{ l.id }}" />
+    <input type="hidden" name="draw" value="{{ d }}" />
+    
+    {% if (draw == "true") %}
+        <p id="draw_link">Blanc</p>
+        <p><a href="{{ url('Eirin_vote') }}">Abstention</a></p>
+    {% else %}
+        <p class="character_name">{{ w.name }}</p>
+        <img src="{{ asset(img_path ~ w.slug ~ '.png') }}" alt="{{ w.name }}" />
+    {% endif %}
+</form>
+

@@ -1,0 +1,21 @@
+{# LyricaEirinBundle:Vote:index.html.twig #}
+{% extends "LyricaEirinBundle::layout.html.twig" %}
+
+{% block body %}
+<table id="eirin_vote"><tr>
+<td id="left_character">
+    {% include "LyricaEirinBundle:Vote:matchForm.html.twig"
+        with { 'w': c1, 'l': c2, d: "false" } %}
+</td>
+
+<td id="tie">
+    {% include "LyricaEirinBundle:Vote:matchForm.html.twig"
+        with { 'w': c1, 'l': c2, d: "true" } %}    
+</td>
+
+<td id="right_character">
+    {% include "LyricaEirinBundle:Vote:matchForm.html.twig"
+        with { 'w': c2, 'l': c1, d: "false" } %}    
+</td>
+</tr>
+</table>

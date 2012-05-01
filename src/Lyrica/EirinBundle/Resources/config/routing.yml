@@ -12,6 +12,12 @@ Eirin_saveOptions:
     requirements:
         _method: POST
 
+Eirin_match
+    pattern: /match
+    defaults: { _controller: LyricaEirinBundle:Vote:match }
+    requirements:
+        _method: POST
+
 Eirin_vote:
     pattern: /vote.html
     defaults: { _controller: LyricaEirinBundle:Vote:index }
