@@ -31,10 +31,10 @@ class Appearance
     private $game;
     
     /**
-     * @var Role $role
+     * @var Role $roles
      * @ORM\ManyToMany(targetEntity="Role")
      */
-    private $role;
+    private $roles;
     
     /**
      * @var integer $id
@@ -44,50 +44,10 @@ class Appearance
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var smallint $wins
-     *
-     * @ORM\Column(name="wins", type="smallint")
-     */
-    private $wins;
-
-    /**
-     * @var smallint $draws
-     *
-     * @ORM\Column(name="draws", type="smallint")
-     */
-    private $draws;
-
-    /**
-     * @var smallint $losses
-     *
-     * @ORM\Column(name="losses", type="smallint")
-     */
-    private $losses;
-
-    /**
-     * @var smallint $elo
-     *
-     * @ORM\Column(name="elo", type="smallint")
-     */
-    private $elo;
-
-    /**
-     * @var smallint $veteran
-     *
-     * @ORM\Column(name="veteran", type="smallint")
-     */
-    private $veteran;
-    
     
     public function __construct()
     {
         $this->role = new ArrayCollection();
-        $this->elo = Elo::ROOKIE;
-        $this->wins = 0;
-        $this->draws = 0;
-        $this->losses = 0;
     }
 
     /**
@@ -98,106 +58,6 @@ class Appearance
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set wins
-     *
-     * @param smallint $wins
-     */
-    public function setWins($wins)
-    {
-        $this->wins = $wins;
-    }
-
-    /**
-     * Get wins
-     *
-     * @return smallint 
-     */
-    public function getWins()
-    {
-        return $this->wins;
-    }
-
-    /**
-     * Set draws
-     *
-     * @param smallint $draws
-     */
-    public function setDraws($draws)
-    {
-        $this->draws = $draws;
-    }
-
-    /**
-     * Get draws
-     *
-     * @return smallint 
-     */
-    public function getDraws()
-    {
-        return $this->draws;
-    }
-
-    /**
-     * Set losses
-     *
-     * @param smallint $losses
-     */
-    public function setLosses($losses)
-    {
-        $this->losses = $losses;
-    }
-
-    /**
-     * Get losses
-     *
-     * @return smallint 
-     */
-    public function getLosses()
-    {
-        return $this->losses;
-    }
-
-    /**
-     * Set elo
-     *
-     * @param smallint $elo
-     */
-    public function setElo($elo)
-    {
-        $this->elo = $elo;
-    }
-
-    /**
-     * Get elo
-     *
-     * @return smallint 
-     */
-    public function getElo()
-    {
-        return $this->elo;
-    }
-
-    /**
-     * Set veteran
-     *
-     * @param smallint $veteran
-     */
-    public function setVeteran($veteran)
-    {
-        $this->veteran = $veteran;
-    }
-
-    /**
-     * Get veteran
-     *
-     * @return smallint 
-     */
-    public function getVeteran()
-    {
-        return $this->veteran;
     }
 
     /**
@@ -241,23 +101,13 @@ class Appearance
     }
 
     /**
-     * Set role
-     *
-     * @param Lyrica\EirinBundle\Entity\Role $role
-     */
-    public function setRole(Role $role)
-    {
-        $this->role = $role;
-    }
-
-    /**
-     * Get role
+     * Get roles
      *
      * @return Lyrica\EirinBundle\Entity\Role 
      */
-    public function getRole()
+    public function getRoles()
     {
-        return $this->role;
+        return $this->roles;
     }
 
     /**
@@ -267,14 +117,6 @@ class Appearance
      */
     public function addRole(Role $role)
     {
-        $this->role[] = $role;
-    }
-    
-    /**
-     * Get the number of matches
-     */
-    public function countMatches()
-    {
-        return $this->wins + $this->losses + $this->draws;
+        $this->roles[] = $role;
     }
 }

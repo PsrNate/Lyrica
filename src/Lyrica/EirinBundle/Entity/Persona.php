@@ -7,7 +7,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 use Lyrica\EirinBundle\Entity\PersonaRepository;
 use Lyrica\EirinBundle\Entity\Appearance;
-use Lyrica\EirinBundle\Utility\Elo;
 
 /**
  * Lyrica\EirinBundle\Entity\Persona
@@ -39,56 +38,17 @@ class Persona
      * @ORM\Column(name="slug", type="string", length=255)
      */
     private $slug;
-
-    /**
-     * @var smallint $elo
-     *
-     * @ORM\Column(name="elo", type="smallint")
-     */
-    private $elo;
-
-    /**
-     * @var smallint $wins
-     *
-     * @ORM\Column(name="wins", type="smallint")
-     */
-    private $wins;
-
-    /**
-     * @var smallint $draws
-     *
-     * @ORM\Column(name="draws", type="smallint")
-     */
-    private $draws;
-
-    /**
-     * @var smallint $losses
-     *
-     * @ORM\Column(name="losses", type="smallint")
-     */
-    private $losses;
-
-    /**
-     * @var smallint $veteran
-     *
-     * @ORM\Column(name="veteran", type="smallint")
-     */
-    private $veteran;
-    
+   
     /**
      * @var Doctrine\Common\Collections\Collection $appearances
      * @ORM\OneToMany(targetEntity="Appearance", mappedBy="Appearance")
-     *
+     
      */
     private $appearances;
     
     public function __construct()
     {
         $this->appearances = new ArrayCollection();
-        $this->elo = Elo::ROOKIE;
-        $this->wins = 0;
-        $this->draws = 0;
-        $this->losses = 0;
     }
 
     /**
@@ -122,109 +82,9 @@ class Persona
     }
 
     /**
-     * Set elo
+     * Add appearance
      *
-     * @param smallint $elo
-     */
-    public function setElo($elo)
-    {
-        $this->elo = $elo;
-    }
-
-    /**
-     * Get elo
-     *
-     * @return smallint 
-     */
-    public function getElo()
-    {
-        return $this->elo;
-    }
-
-    /**
-     * Set wins
-     *
-     * @param smallint $wins
-     */
-    public function setWins($wins)
-    {
-        $this->wins = $wins;
-    }
-
-    /**
-     * Get wins
-     *
-     * @return smallint 
-     */
-    public function getWins()
-    {
-        return $this->wins;
-    }
-
-    /**
-     * Set draws
-     *
-     * @param smallint $draws
-     */
-    public function setDraws($draws)
-    {
-        $this->draws = $draws;
-    }
-
-    /**
-     * Get draws
-     *
-     * @return smallint 
-     */
-    public function getDraws()
-    {
-        return $this->draws;
-    }
-
-    /**
-     * Set losses
-     *
-     * @param smallint $losses
-     */
-    public function setLosses($losses)
-    {
-        $this->losses = $losses;
-    }
-
-    /**
-     * Get losses
-     *
-     * @return smallint 
-     */
-    public function getLosses()
-    {
-        return $this->losses;
-    }
-
-    /**
-     * Set veteran
-     *
-     * @param smallint $veteran
-     */
-    public function setVeteran($veteran)
-    {
-        $this->veteran = $veteran;
-    }
-
-    /**
-     * Get veteran
-     *
-     * @return smallint 
-     */
-    public function getVeteran()
-    {
-        return $this->veteran;
-    }
-    
-    /**
-     * Add appearances
-     *
-     * @param Lyrica\EirinBundle\Entity\Appearance $appearances
+     * @param Lyrica\EirinBundle\Entity\Appearance $appearance
      */
     public function addAppearance(Appearance $appearance)
     {
@@ -241,14 +101,6 @@ class Persona
         return $this->appearances;
     }
     
-    /**
-     * Get the number of matches
-     */
-    public function countMatches()
-    {
-        return $this->wins + $this->losses + $this->draws;
-    }
-
     /**
      * Get slug
      *
