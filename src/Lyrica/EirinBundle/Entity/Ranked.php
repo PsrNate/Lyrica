@@ -46,6 +46,38 @@ abstract class Ranked
         $this->draws = 0;
         $this->losses = 0;
     }
+    
+    /**
+     * Updates Elo score after an encounter
+     * @param integer $opp the opponent's Elo
+     * @param integer $res the encounter's result
+     */
+    public function updateElo($opp, $res)
+    {
+        // p(D) : victory probability
+        $diff = $opp - $this->elo; // inverted for calc purposes
+        $p = 1 / (1 + pow(10, $diff / 400));
+        
+        // k : Development coefficient
+        $k = ($this->countMatches() < 30 ? 30 : ($$this->veteran ? 15 : 10));
+        
+        // Save 
+        $this->elo = round($this->elo + $k * ($res - $p));
+        
+        // Then update match counter
+        switch($res)
+        {
+            case 1: $this->wins++; break;
+            case 0.5: $this->draws++; break;
+            case 0: $this->losses++;
+        }
+        
+        // Promote if needed
+        if ($this->elo >= 2400)
+        {
+            $this->veteran = 1;
+        }  
+    }
 
     /**
      * Get elo

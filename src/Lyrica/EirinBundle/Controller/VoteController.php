@@ -3,6 +3,7 @@
 namespace Lyrica\EirinBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Lyrica\EirinBundle\Entity\Encounter;
 
 
 class VoteController extends Controller
@@ -32,7 +33,50 @@ class VoteController extends Controller
      * Processes an encounter
      */
     public function matchAction()
-    {   
+    {
+        // Fetching POST data, entity manager and repositories
+        $post = $this->get('request')->request;
+        $em = $this->getDoctrine()->getEntityManager();
+        $pr = $em->getRepository('LyricaEirinBundle:Persona');
+        
+        // Calculating results (Elo)
+        $wr = ($post->get('draw') ? 0.5 : 1);
+        $lr = ($post->get('draw') ? 0.5 : 0);
+        
+        // Elo update : intergame ranking
+        $w = $pr->findComplete($post->get('w_id'));
+        $l = $pr->findComplete($post->get('l_id'));
+        
+        $w->updateElo($l->getElo(), $wr);
+        $l->updateElo($w->getElo(), $lr);
+        
+        // Internal ranking
+        foreach ($w->getAppearances() as $wa)
+        {
+            foreach ($l->getAppearances() as $la)
+            {
+                if ($wa->getGame() == $la->getGame())
+                {
+                    $wa->updateElo($la->getElo(), $wr);
+                    $la->updateElo($wa->getElo(), $lr);
+                }
+            }
+        }
+        
+        // Registering the encounter
+        $e = new Encounter();
+        $e->setWinner($w);
+        $e->setLoser($l);
+        $e->setDraw(($post->get('draw') ? 1 : 0));
+        
+        // Saving everything
+        $em->persist($e);
+        $em->flush();
+        
+        // Forwarding to index
+        $act_name = 'LyricaEirinBundle:Vote:index';
+        return $this->forward($act_name);
+        
     }
     
     /**
