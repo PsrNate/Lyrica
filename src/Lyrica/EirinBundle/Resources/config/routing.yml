@@ -21,3 +21,7 @@ Eirin_match
 Eirin_vote:
     pattern: /vote.html
     defaults: { _controller: LyricaEirinBundle:Vote:index }
+
+Eirin_role:
+    resource: "@LyricaEirinBundle/Resources/config/routing/role.yml"
+    prefix: /role
