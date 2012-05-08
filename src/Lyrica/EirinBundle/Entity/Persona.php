@@ -7,6 +7,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 use Lyrica\EirinBundle\Entity\PersonaRepository;
 use Lyrica\EirinBundle\Entity\Appearance;
+use Lyrica\EirinBundle\Entity\Avatar;
 
 /**
  * Lyrica\EirinBundle\Entity\Persona
@@ -45,6 +46,12 @@ class Persona
      
      */
     private $appearances;
+    
+    /**
+     * @var Lyrica\EirinBundle\Entity\Avatar $avatar
+     * @ORM\OneToOne(targetEntity="Avatar")
+     */
+    private $avatar;
     
     public function __construct()
     {
@@ -109,5 +116,23 @@ class Persona
     public function getSlug()
     {
         return $this->slug;
+    }
+    
+    /**
+     * Set avatar
+     * @param Lyrica\EirinBundle\Entity\Avatar $avatar
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+    }
+    
+    /**
+     * Get avatar
+     * @return Lyrica\EirinBundle\Entity\Avatar
+     */
+    public function getAvatar()
+    {
+        return $this->avatar();
     }
 }
