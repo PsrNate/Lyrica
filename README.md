@@ -90,6 +90,13 @@ think of a main gate, you come up with the idea of a shrine, and thus its
 maiden. And no, I didn't choose Reimu because she's one of mai waifus. Well,
 not entirely... Meh. Whatever.
 
+### Sakuya
+
+As we all know, Sakuya is the head maid, that is to say the one who manages
+everything in the daily life of the Scarlet mansion. That is why this bundle
+will mainly contain routes, that is to say shortcuts to all of the pages that
+an admin will need to access to modify data and manage the application.
+
 ### Satori
 
 This is actually a User bundle, which will manage permissions, settings, and
