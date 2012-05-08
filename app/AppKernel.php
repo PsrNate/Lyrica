@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Lyrica\ReimuBundle\LyricaReimuBundle(),
             new Lyrica\EirinBundle\LyricaEirinBundle(),
             new Lyrica\SatoriBundle\LyricaSatoriBundle(),
+            new Lyrica\SakuyaBundle\LyricaSakuyaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

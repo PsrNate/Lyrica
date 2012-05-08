@@ -1,0 +1,7 @@
+parameters:
+#    lyrica_sakuya.example.class: Lyrica\SakuyaBundle\Example
+
+services:
+#    lyrica_sakuya.example:
+#        class: %lyrica_sakuya.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
