@@ -1,0 +1,30 @@
+persona:
+    pattern:  /
+    defaults: { _controller: "LyricaEirinBundle:Persona:index" }
+
+persona_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "LyricaEirinBundle:Persona:show" }
+
+persona_new:
+    pattern:  /new
+    defaults: { _controller: "LyricaEirinBundle:Persona:new" }
+
+persona_create:
+    pattern:  /create
+    defaults: { _controller: "LyricaEirinBundle:Persona:create" }
+    requirements: { _method: post }
+
+persona_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "LyricaEirinBundle:Persona:edit" }
+
+persona_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "LyricaEirinBundle:Persona:update" }
+    requirements: { _method: post }
+
+persona_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "LyricaEirinBundle:Persona:delete" }
+    requirements: { _method: post }
