@@ -35,8 +35,9 @@ class PersonaController extends Controller
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
+        $pr = $em->getRepository('LyricaEirinBundle:Persona');
 
-        $entity = $em->getRepository('LyricaEirinBundle:Persona')->find($id);
+        $entity = $pr->findComplete($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Persona entity.');
@@ -127,7 +128,7 @@ class PersonaController extends Controller
         $entity = $em->getRepository('LyricaEirinBundle:Persona')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Persona entity.');
+            throw $this->createNotFoundException('Unable to find Persona');
         }
 
         $editForm   = $this->createForm(new PersonaType(), $entity);
@@ -167,7 +168,7 @@ class PersonaController extends Controller
             $entity = $em->getRepository('LyricaEirinBundle:Persona')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Persona entity.');
+                throw $this->createNotFoundException('Unable to find Persona');
             }
 
             $em->remove($entity);

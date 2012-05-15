@@ -1,3 +1,5 @@
+{# LyricaEirinBundle:Persona:show.html.twig #}
+{% extends LyricaEirinBuneld::layout.html.twig %}
 <h1>Persona</h1>
 
 <table class="record_properties">
@@ -14,6 +16,10 @@
             <th>Slug</th>
             <td>{{ entity.slug }}</td>
         </tr>
+        <tr>
+            <th>Intergame Elo</th>
+            <td>{{ entity.elo }}</td>
+        </tr>
     </tbody>
 </table>
 
@@ -29,9 +35,26 @@
         </a>
     </li>
     <li>
-        <form action="{{ path('persona_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('persona_delete', { 'id': entity.id }) }}"
+              method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>
     </li>
+</ul>
+
+<ul class="appearances">
+    {% for app in entity.appearances %}
+    <li>
+        {{ app.game.fullName }}
+        (<a href="{{ path('appearance_show', { 'id' : app.id }) }}">
+            Show
+        </a>)
+    </li>
+    <ul class="roles">
+        {% for role in app.roles %}
+        <li>{{ role.title }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
 </ul>

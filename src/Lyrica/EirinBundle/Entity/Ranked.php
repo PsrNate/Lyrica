@@ -118,7 +118,7 @@ abstract class Ranked
     /**
      * Get the number of matches
      */
-    public function countMatches()
+    public function getMatchesCount()
     {
         return $this->wins + $this->losses + $this->draws;
     }
