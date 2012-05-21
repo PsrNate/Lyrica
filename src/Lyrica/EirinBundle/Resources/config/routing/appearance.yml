@@ -1,0 +1,6 @@
+appearance_show:
+    pattern: /show/{id}
+    defaults:
+        _controller: LyricaEirinBundle:Appearance:show
+    requirements:
+        id: \d+
