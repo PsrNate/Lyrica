@@ -4,3 +4,10 @@ appearance_show:
         _controller: LyricaEirinBundle:Appearance:show
     requirements:
         id: \d+
+
+appearance_add_role:
+    pattern: /{app_id}/add/role
+    defaults:
+        _controller: LyricaEirinBundle:Appearance:addRole
+    requirements:
+        id: \d+

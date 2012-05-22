@@ -1,0 +1,17 @@
+{# LyricaEirinBundle:Appearance:addRole.html.twig #}
+<ul class="information">
+    <li>Persona : {{ app.persona }}</li>
+    <li>Game : {{ app.game }}</li>
+</ul>
+
+<form method="post" action="{{ path('appearance_link_role') }}"
+    {{ form_enctype(form) }}>
+    <p>
+        Role :
+        {{ form_widget(form.role) }}
+    </p>
+    <p>
+        {{ form_rest(form) }}
+        <input type="submit" />
+    </p>
+</form>
