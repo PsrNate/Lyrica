@@ -41,7 +41,11 @@ class Game
      * @ORM\Column(name="slug", type="string", length=255)
      */
     private $slug;
-
+    
+    public function __toString()
+    {
+        return $this->getFullName();
+    }
 
     /**
      * Get id

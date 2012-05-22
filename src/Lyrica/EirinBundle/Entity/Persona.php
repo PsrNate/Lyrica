@@ -57,6 +57,11 @@ class Persona
     {
         $this->appearances = new ArrayCollection();
     }
+    
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     /**
      * Get id

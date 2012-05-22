@@ -34,7 +34,11 @@ class Role
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
-
+    
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 
     /**
      * Get id
