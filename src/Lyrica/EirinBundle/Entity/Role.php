@@ -39,7 +39,7 @@ class Role
     {
         return $this->getTitle();
     }
-
+    
     /**
      * Get id
      *

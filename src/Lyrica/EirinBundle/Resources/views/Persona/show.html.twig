@@ -46,14 +46,14 @@
 <ul class="appearances">
     {% for app in entity.appearances %}
     <li>
-        {{ app.game.fullName }}
+        {{ app.game }}
         (<a href="{{ path('appearance_show', { 'id' : app.id }) }}">
             Show
         </a>)
     </li>
     <ul class="roles">
         {% for role in app.roles %}
-        <li>{{ role.title }}</li>
+        <li>{{ role }}</li>
         {% endfor %}
     </ul>
     {% endfor %}
