@@ -4,6 +4,7 @@ namespace Lyrica\EirinBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Lyrica\EirinBundle\Entity\Appearance;
+use Lyrica\EirinBundle\Form\AppearanceRoleType;
 
 class AppearanceController extends Controller
 {
@@ -19,21 +20,8 @@ class AppearanceController extends Controller
         // Template argument
         $argts['app'] = $app;
         
-        // Role options (form)
-        $opt['class'] = 'LyricaEirinBundle:Role';
-        $opt['empty_value'] = false;
-        $opt['query_builder'] =
-            function(EntityRepository $er)
-            {
-                return $this->createQueryBuilder('r')
-                            ->orderBy('r.order', 'ASC');
-            };
-        
         // Then the form
-        $form = $this->createFormBuilder($app);
-        $form->add('id', 'hidden');
-        $form->add('role', 'entity', $opt);
-        // Template argument
+        $form = $this->createFormBuilder(new AppearanceRoleType, $app);
         $argts['form'] = $form->createView();
         
         // And finally render everything
@@ -41,6 +29,10 @@ class AppearanceController extends Controller
         return $this->render($tpl_path, $argts);
     }
     
+    /**
+     * Creates a form (not its view) to delete an appearance
+     * @param integer $id The appearance's id
+     */
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder(array('id' => $id))
