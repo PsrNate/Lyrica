@@ -1,0 +1,14 @@
+<form action="{{ path('appearance_create') }}" method="post"
+      {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" value="Ajouter" />
+</form>
+
+<ul class="actions">
+    <li>
+        <a href="{{ path('persona_show',
+                    { 'id' : app.persona.id } ) }}">
+            Retour à la Persona
+        </a>
+    </li>
+</ul>
