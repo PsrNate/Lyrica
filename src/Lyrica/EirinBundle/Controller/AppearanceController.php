@@ -31,6 +31,27 @@ class AppearanceController extends Controller
     }
     
     /**
+     * Creates a new appearance and forwards to the Persona's page
+     */
+    public function createAction(Request $request)
+    {
+        // Get the form data
+        $app = new Appearance;
+        $form = $this->createForm(new AppearanceType, $app);
+        $form->bindRequest($request);
+        
+        // Then save it to the database
+       $em = $this->getDoctrine()->getEntityManager();
+       $em->persist($app);
+       $em->flush();
+       
+       // And redirect
+       $argts['id'] = $app->getPersona()->getId();
+       $url = $this->generateUrl('persona_show', $argts);
+       return $this->redirect($url);
+    }
+    
+    /**
      * Creates a form (not its view) to delete an appearance
      * @param integer $id The appearance's id
      */
