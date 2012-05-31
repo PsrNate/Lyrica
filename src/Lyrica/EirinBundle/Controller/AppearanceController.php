@@ -5,6 +5,7 @@ namespace Lyrica\EirinBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Lyrica\EirinBundle\Entity\Appearance;
 use Lyrica\EirinBundle\Form\AppearanceRoleType;
+use Lyrica\EirinBundle\Form\AppearanceType;
 
 class AppearanceController extends Controller
 {
@@ -21,7 +22,7 @@ class AppearanceController extends Controller
         $argts['app'] = $app;
         
         // Then the form
-        $form = $this->createFormBuilder(new AppearanceRoleType, $app);
+        $form = $this->createForm(new AppearanceRoleType, $app);
         $argts['form'] = $form->createView();
         
         // And finally render everything
@@ -52,7 +53,7 @@ class AppearanceController extends Controller
         $ar = $em->getRepository('LyricaEirinBundle:Appearance');
         
         // Get the form and its data
-        $form = $this->createFormBuilder(new AppearanceRoleType);
+        $form = $this->createForm(new AppearanceRoleType);
         $form->bindRequest($request);
         $data = $form->getData();
         
@@ -66,6 +67,31 @@ class AppearanceController extends Controller
         $opt['id'] = $data['app_id'];
         $url = $this->generateUrl('persona_show', $opt);
         return $this->redirect($url);
+    }
+    
+    /**
+     * Shows a form to create a new Appearance
+     */
+    public function newAction($p_id)
+    {
+        // Get a new appearance and set its Persona
+        $em = $this->getDoctrine()->getEntityManager();
+        $pr = $em->getRepository('LyricaEirinBundle:Persona');
+        
+        $app = new Appearance;
+        $per = $pr->find($p_id);
+        $app->setPersona($per);
+        
+        // Template argument
+        $argts['persona'] = $per;
+        
+        // Then generate the form
+        $form = $this->createForm(new AppearanceType, $app);
+        $argts['form'] = $form->createView();
+        
+        // And render everything
+        $tpl_path = 'LyricaEirinBundle:Appearance:new.html.twig';
+        return $this->render($tpl_path, $argts);
     }
     
     /**
