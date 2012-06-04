@@ -2,4 +2,9 @@
 {% extends "LyricaEirinBundle::layout.html.twig" %}
 
 {% block body %}
+<p>Ici vous pouvez sauvegarder vos options pour le match.</p>
+<form method="post" action="{{ path('Eirin_options') }}">
+{% for g in games %}
+{% endfor %}
+</form>
 {% endblock %}
