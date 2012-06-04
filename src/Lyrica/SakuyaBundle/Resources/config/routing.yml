@@ -1,3 +1,15 @@
-LyricaSakuyaBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: LyricaSakuyaBundle:Default:index }
+SakuyaEirin_appearance:
+    resource: "@LyricaEirinBundle/Resources/config/routing/appearance.yml"
+    prefix: /appearance
+
+SakuyaEirin_game:
+    resource: "@LyricaEirinBundle/Resources/config/routing/game.yml"
+    prefix: /game
+    
+SakuyaEirin_persona:
+    resource: "@LyricaEirinBundle/Resources/config/routing/persona.yml"
+    prefix: /persona
+    
+SakuyaEirin_role:
+    resource: "@LyricaEirinBundle/Resources/config/routing/role.yml"
+    prefix: /role
