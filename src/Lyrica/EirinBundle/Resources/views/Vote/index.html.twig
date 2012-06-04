@@ -19,7 +19,7 @@
 </td>
 </tr>
 </table>
-
+{% block javascript %}
 <script>
 // Apparitions
 var l_cell = document.getElementById('left_character');
@@ -59,3 +59,4 @@ tie.onclick = function() {
     document.querySelector('#tie form').submit();
 };
 </script>
+{% endblock %}
