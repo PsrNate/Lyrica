@@ -1,6 +1,6 @@
 LyricaSakuyaBundle:
     resource: "@LyricaSakuyaBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 LyricaEirinBundle:
     resource: "@LyricaEirinBundle/Resources/config/routing.yml"
